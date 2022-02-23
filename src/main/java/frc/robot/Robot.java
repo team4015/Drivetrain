@@ -24,6 +24,8 @@ public class Robot
 
     throttle = new Joystick(THROTTLE_USB_PORT);
     steering = new Joystick(STEERING_USB_PORT);
+
+    stop();
   }
 
   private double getThrottle()
