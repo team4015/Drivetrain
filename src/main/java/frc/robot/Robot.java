@@ -11,6 +11,8 @@ public class Robot
   private final int THROTTLE_USB_PORT = 0;
   private final int STEERING_USB_PORT = 1;
 
+  private final double DEADZONE = 0.15;
+
   private Talon leftMotors;
   private Talon rightMotors;
 
@@ -28,14 +30,26 @@ public class Robot
     stop();
   }
 
+  private double deadzone(double value)
+  {
+    if (Math.abs(value) < DEADZONE)
+    {
+      return 0;
+    }
+    else
+    {
+      return value;
+    }
+  }
+
   private double getThrottle()
   {
-    return -throttle.getY();
+    return -deadzone(throttle.getY());
   }
 
   private double getSteering()
   {
-    return steering.getX();
+    return deadzone(steering.getX());
   }
 
   private void drive(double throttleSpeed, double steeringSpeed)
