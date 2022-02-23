@@ -26,25 +26,30 @@ public class Robot
     steering = new Joystick(STEERING_USB_PORT);
   }
 
-  public double getThrottle()
+  private double getThrottle()
   {
     return -throttle.getY();
   }
 
-  public double getSteering()
+  private double getSteering()
   {
     return steering.getX();
   }
 
-  public void drive()
+  private void drive(double throttleSpeed, double steeringSpeed)
   {
-    leftMotors.set(getThrottle() + getSteering());
-    rightMotors.set(getThrottle() - getSteering());
+    leftMotors.set(throttleSpeed + steeringSpeed);
+    rightMotors.set(throttleSpeed - steeringSpeed);
   }
 
   public void stop()
   {
     leftMotors.set(0);
     rightMotors.set(0);
+  }
+
+  public void run()
+  {
+    drive(getThrottle(), getSteering());
   }
 }

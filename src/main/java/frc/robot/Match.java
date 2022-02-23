@@ -28,7 +28,7 @@ public class Match extends TimedRobot
   @Override
   public void teleopPeriodic()
   {
-    robot.drive();
+    robot.run();
   }
 
   @Override
