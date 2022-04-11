@@ -4,11 +4,11 @@ import edu.wpi.first.wpilibj.motorcontrol.Talon;
 
 public class Drivetrain
 {
-  private final int LEFT_MOTORS_PWM_CHANNEL = 0;
-  private final int RIGHT_MOTORS_PWM_CHANNEL = 1;
+  private static final int LEFT_MOTORS_PWM_CHANNEL = 0;
+  private static final int RIGHT_MOTORS_PWM_CHANNEL = 1;
 
-  private final boolean LEFT_MOTORS_INVERTED = false;
-  private final boolean RIGHT_MOTORS_INVERTED = false;
+  private static final boolean LEFT_MOTORS_INVERTED = false;
+  private static final boolean RIGHT_MOTORS_INVERTED = false;
 
   private Talon leftMotors;
   private Talon rightMotors;

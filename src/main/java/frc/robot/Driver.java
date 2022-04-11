@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class Driver
 {
-  private final int THROTTLE_USB_PORT = 0;
-  private final int STEERING_USB_PORT = 1;
+  private static final int THROTTLE_USB_PORT = 0;
+  private static final int STEERING_USB_PORT = 1;
 
-  private final double DEADZONE = 0.05;
+  private static final double DEADZONE = 0.05;
 
   private Joystick throttle;
   private Joystick steering;
